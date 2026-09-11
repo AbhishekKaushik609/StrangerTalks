@@ -5,6 +5,8 @@ const BACKEND_URL =
   "http://localhost:5000";
 
 export const socket = io(BACKEND_URL, {
-  transports: ["websocket"],
-  reconnection: true
+  reconnection: true,
+  reconnectionAttempts: 10,
+  reconnectionDelay: 1000,
+  timeout: 20000
 });
